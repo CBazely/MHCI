@@ -1,6 +1,7 @@
 package com.example.mobhci;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback {
 
@@ -51,10 +57,11 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMinZoomPreference(10);
+        mMap.setMinZoomPreference(15);
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng( 55.873724, -4.292538);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Start"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
     }
 }
